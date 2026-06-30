@@ -3,7 +3,7 @@
     name: my-lotteries-app
     runtime: python
     plan: free
-    region: frankfurt
+    region: oregon
     buildCommand: ./build.sh
     startCommand: gunicorn mylotteries.wsgi:application
     envVars:
