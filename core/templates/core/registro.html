@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+{% block titulo %}Registro{% endblock %}
+{% block contenido %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white"><h3>Crear cuenta</h3></div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-success">Registrarse</button>
+                    <a href="{% url 'login' %}" class="btn btn-link">?Ya tienes cuenta?</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
