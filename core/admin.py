@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Sorteo, LicenciaPremium
 
-# Register your models here.
+admin.site.register(Sorteo)
+admin.site.register(LicenciaPremium)
