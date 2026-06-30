@@ -5,6 +5,5 @@ app_name = 'core'
 
 urlpatterns = [
     path('', views.home, name='home'),
-]
-
     path('registro/', views.RegistroUsuario.as_view(), name='register'),
+]
