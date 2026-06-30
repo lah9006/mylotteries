@@ -5,10 +5,11 @@ from django.views.generic import CreateView
 from .models import Sorteo
 
 def home(request):
-    sorteos = Sorteo.objects.filter(activo=True).order_by('-fecha_sorteo')
-    return render(request, 'core/home.html', {'sorteos': sorteos})
-
-class RegistroUsuario(CreateView):
-    form_class = UserCreationForm
-    template_name = 'core/registro.html'
-    success_url = reverse_lazy('login')
+    try:
+        sorteos = Sorteo.objects.filter(activo=True).order_by('-fecha_sorteo')
+        return render(request, 'core/home.html', {'sorteos': sorteos})
+    except Exception as e:
+        # Esto mostrar? el error en los logs de Render
+        import logging
+        logging.error(f"Error en home: {e}")
+        raise
