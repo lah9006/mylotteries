@@ -16,7 +16,7 @@
       - key: DATABASE_URL
         fromDatabase:
           name: my-lotteries-db
-          property: connectionString
+          property: connectionString  # <-- esta es la línea que podría estar fallando
 
 databases:
   - name: my-lotteries-db
